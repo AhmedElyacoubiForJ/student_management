@@ -31,7 +31,6 @@ public class StudentAppConfig {
 		return new JdbcTemplate(dataSource());
 	}
 	
-	
 	private DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		
