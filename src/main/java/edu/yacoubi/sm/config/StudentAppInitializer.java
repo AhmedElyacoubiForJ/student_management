@@ -1,4 +1,4 @@
-package edu.yacoubi.config;
+package edu.yacoubi.sm.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
