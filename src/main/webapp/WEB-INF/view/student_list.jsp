@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1 align="center">Student management system</h1>
+	<i>student list coming soon...</i>
 </body>
 </html>

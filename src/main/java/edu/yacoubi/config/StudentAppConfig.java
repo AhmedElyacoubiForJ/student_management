@@ -8,14 +8,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "edu.yacoubi.config")
+@ComponentScan(basePackages = "edu.yacoubi")
 public class StudentAppConfig {
 	
 	@Bean
 	InternalResourceViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("WEB-INF/view/");
+		InternalResourceViewResolver viewResolver =
+				new InternalResourceViewResolver();
+		
+		viewResolver.setPrefix("/WEB-INF/view/");
 		viewResolver.setSuffix(".jsp");
+		
 		return viewResolver;
 	}
 
