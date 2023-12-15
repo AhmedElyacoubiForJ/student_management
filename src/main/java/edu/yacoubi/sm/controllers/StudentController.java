@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.yacoubi.sm.dao.StudentDAO;
 import edu.yacoubi.sm.model.Student;
@@ -33,7 +34,14 @@ public class StudentController {
 	@PostMapping("/saveStudent")
     public String saveStudent(Student student) {
 		dao.save(student);
-        return "redirect:/showStudentList";
+		return "redirect:/thankYou";
+        //return "redirect:/showStudentList";
     }
+	
+	@ResponseBody
+	@GetMapping("/thankYou")
+	public String thankYou() {
+		return "Thank you, Your record has been added to the database.";
+	}
 	
 }

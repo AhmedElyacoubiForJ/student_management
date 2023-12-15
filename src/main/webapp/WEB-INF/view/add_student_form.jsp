@@ -11,7 +11,7 @@
 <body>
 	<div align="center">
 		<h3 align="center">Add new Student</h3>
-		<form:form action="saveStudent" method="post" modelAttribute="student">
+		<form:form action="saveStudent" modelAttribute="student" method="post">
 			<form:label path="name">Name : </form:label >
 			<form:input path="name"></form:input>
 			<br />
