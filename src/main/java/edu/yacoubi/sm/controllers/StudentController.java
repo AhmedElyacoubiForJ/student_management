@@ -32,12 +32,14 @@ public class StudentController {
     }
 	
 	@PostMapping("/saveStudent")
-    public String saveStudent(Student student, Model model) {
+    public String saveStudent(StudentDTO studentDTO) {
+		Student student = new Student(
+				studentDTO.getName(),
+				studentDTO.getMobile(),
+				studentDTO.getCountry()
+				);
 		dao.save(student);
-		List<Student> studentList = dao.loadStudents();
-		model.addAttribute("students", studentList);
-		
-        return "student_list";
+        return "redirect:/students";
     }
 	
 }
