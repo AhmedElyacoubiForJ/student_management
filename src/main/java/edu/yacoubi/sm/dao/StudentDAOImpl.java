@@ -20,4 +20,12 @@ public class StudentDAOImpl implements StudentDAO {
 		List<Student> queryResult = template.query(sql, new StudentRowMapper());
 		return queryResult;
 	}
+
+	@Override
+	public void save(Student student) {
+		String sql = "INSERT INTO students (name, mobile, country) "
+				+ "VALUES ('" + student.getName() + "', '" + student.getMobile() + "', '"
+						+ student.getCountry() + "')";
+		template.execute(sql);
+	}
 }

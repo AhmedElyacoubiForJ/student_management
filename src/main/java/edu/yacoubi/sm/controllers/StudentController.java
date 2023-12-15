@@ -6,21 +6,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.yacoubi.sm.dao.StudentDAO;
 import edu.yacoubi.sm.model.Student;
+import edu.yacoubi.sm.model.StudentDTO;
 
 @Controller
 public class StudentController {
 	
 	@Autowired
-	private StudentDAO studentDAO;
+	private StudentDAO dao;
    
 	@GetMapping("/students")
     public String showStudentsList(Model model) {
-		List<Student> studentList = studentDAO.loadStudents();
-		studentList.forEach(System.out::println);
+		List<Student> studentList = dao.loadStudents();
 		model.addAttribute("students", studentList);
         return "student_list";
     }
+	
+	@GetMapping("/studentForm")
+    public String showStudentForm(Model model) {
+		model.addAttribute("student", new StudentDTO());
+        return "add_student_form";
+    }
+	
+	@PostMapping("/saveStudent")
+    public String saveStudent(Student student, Model model) {
+		dao.save(student);
+		List<Student> studentList = dao.loadStudents();
+		model.addAttribute("students", studentList);
+		
+        return "student_list";
+    }
+	
 }

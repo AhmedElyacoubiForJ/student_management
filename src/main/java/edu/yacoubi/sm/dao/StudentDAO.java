@@ -6,4 +6,5 @@ import edu.yacoubi.sm.model.Student;
 
 public interface StudentDAO {
 	List<Student> loadStudents();
+	void save(Student student);
 }
