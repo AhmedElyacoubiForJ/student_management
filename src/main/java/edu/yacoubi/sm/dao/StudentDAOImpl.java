@@ -23,12 +23,8 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public void save(Student student) {
-		String name = student.getName();
-		long mobile = student.getMobile();
-		String country = student.getCountry();
-		
-		String sql = "INSERT INTO students (name, mobile, country) "
-					+ "VALUES ('"+name+"', '"+mobile+"', '"+country+"')";
-		template.execute(sql);
+		Object[] sqlParameters = {student.getName(),student.getMobile(),student.getCountry()};
+		String sql = "INSERT INTO students (name,mobile,country) VALUES (?,?,?)";
+		template.update(sql, sqlParameters);
 	}
 }

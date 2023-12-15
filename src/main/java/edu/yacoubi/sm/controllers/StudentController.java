@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import edu.yacoubi.sm.dao.StudentDAO;
 import edu.yacoubi.sm.model.Student;
-import edu.yacoubi.sm.model.StudentDTO;
 
 @Controller
 public class StudentController {
@@ -18,28 +17,23 @@ public class StudentController {
 	@Autowired
 	private StudentDAO dao;
    
-	@GetMapping("/students")
+	@GetMapping("/showStudentList")
     public String showStudentsList(Model model) {
 		List<Student> studentList = dao.loadStudents();
 		model.addAttribute("students", studentList);
         return "student_list";
     }
 	
-	@GetMapping("/studentForm")
+	@GetMapping("/showStudentForm")
     public String showStudentForm(Model model) {
-		model.addAttribute("student", new StudentDTO());
+		model.addAttribute("student", new Student());
         return "add_student_form";
     }
 	
 	@PostMapping("/saveStudent")
-    public String saveStudent(StudentDTO studentDTO) {
-		Student student = new Student(
-				studentDTO.getName(),
-				studentDTO.getMobile(),
-				studentDTO.getCountry()
-				);
+    public String saveStudent(Student student) {
 		dao.save(student);
-        return "redirect:/students";
+        return "redirect:/showStudentList";
     }
 	
 }
