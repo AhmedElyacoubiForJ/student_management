@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,6 +36,7 @@ public class StudentController {
 	// post, redirect and get
 	@PostMapping("/saveOrUpdateStudent")
     public String saveStudent(Student student) {
+		System.out.println(student);
 		if (student.getId() == 0) {
 			service.saveStudent(student);
 		} else {
@@ -44,10 +46,16 @@ public class StudentController {
     }
 	
 	@GetMapping("/showUpdateForm")
-    public String showUpdateForm(Model model, @RequestParam("id") int id) {
-		Student student = service.getStudentById(id);
-		model.addAttribute("student", student);
-        return "add_student_form";
+    public String showUpdateForm(@RequestParam("id") int id, @ModelAttribute("student") Student student) {
+		
+		Student theStudent = service.getStudentById(id);
+		
+		student.setId(theStudent.getId());
+		student.setName(theStudent.getName());
+		student.setMobile(theStudent.getMobile());
+		student.setCountry(theStudent.getCountry());
+        
+		return "add_student_form";
     }
 	
 //	@PostMapping("/updateStudent")
