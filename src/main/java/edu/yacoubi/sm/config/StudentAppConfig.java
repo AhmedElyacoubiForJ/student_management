@@ -17,13 +17,12 @@ public class StudentAppConfig {
 	
 	@Bean
 	InternalResourceViewResolver viewResolver() {
-		InternalResourceViewResolver viewResolver =
-				new InternalResourceViewResolver();
+		InternalResourceViewResolver vResolver = new InternalResourceViewResolver();
 		
-		viewResolver.setPrefix("/WEB-INF/view/");
-		viewResolver.setSuffix(".jsp");
+		vResolver.setPrefix("/WEB-INF/view/");
+		vResolver.setSuffix(".jsp");
 		
-		return viewResolver;
+		return vResolver;
 	}
 	
 	@Bean

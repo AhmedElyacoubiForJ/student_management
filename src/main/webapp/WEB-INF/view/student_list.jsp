@@ -10,7 +10,6 @@
 </head>
 <body>
 	<h1 align="center">List of students</h1>
-	
 	<div align="center">
 		<!--  -->
 		<form action="showStudentForm">
@@ -24,6 +23,7 @@
 					<td>Name</td>
 					<td>Mobile</td>
 					<td>Country</td>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,6 +33,12 @@
 						<td>${student.name}</td>
 						<td>${student.mobile}</td>
 						<td>${student.country}</td>
+						<td> 
+							<div class="display: inline-block">
+								<a href="/student_management/showUpdateForm?id=${student.id}" style="color: blue">Update</a>
+								<a href="#" style="color: red">Delete</a>
+							</div>
+        				</td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Student {
 	private int id;
 	private String name;
-	private long mobile;
+	private Long mobile;
 	private String country;
 	
 	public Student(
