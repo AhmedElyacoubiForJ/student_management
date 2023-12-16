@@ -36,7 +36,7 @@
 						<td> 
 							<div class="display: inline-block">
 								<a href="/student_management/showUpdateForm?id=${student.id}" style="color: blue">Update</a>
-								<a href="#" style="color: red">Delete</a>
+								<a href="/student_management/deleteStudent?id=${student.id}" style="color: red">Delete</a>
 							</div>
         				</td>
 					</tr>

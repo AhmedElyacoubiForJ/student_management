@@ -13,8 +13,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class StudentService implements IStudentService {
 	private final StudentDAO dao;
-	private List<String> countryAllowed =
-			Arrays.asList("DE", "MA", "USA", "UK", "FR");
+	private List<String> countryAllowed = Arrays.asList("DE", "MA", "USA", "UK", "FR");
+	
 	@Override
 	public List<Student> getAllStudents() {
 		return dao.findAll();
@@ -39,5 +39,10 @@ public class StudentService implements IStudentService {
 	@Override
 	public void updateStudent(Student student) {
 		dao.update(student);
+	}
+
+	@Override
+	public void deleteStudentById(int id) {
+		dao.delete(id);
 	}
 }

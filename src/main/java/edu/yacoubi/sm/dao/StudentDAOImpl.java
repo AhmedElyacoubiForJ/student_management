@@ -19,6 +19,7 @@ public class StudentDAOImpl implements StudentDAO {
 	private final String SQL_SAVE     	= "INSERT INTO students (name,mobile,country) VALUES (?,?,?)";
 	private final String SQL_UPDATE   	= "UPDATE students SET name=?, mobile=?, country=? WHERE id=?";
 	private final String SQL_FIND_BY_ID = "SELECT * FROM students WHERE id=?";
+	private final String SQL_DELETE 	= "DELETE from Students where id = ?";
 
 	@Override
 	public List<Student> findAll() {
@@ -56,5 +57,10 @@ public class StudentDAOImpl implements StudentDAO {
 				student.getMobile(),
 				student.getCountry(),
 				student.getId());
+	}
+
+	@Override
+	public void delete(int id) {
+		template.update(SQL_DELETE, id);
 	}
 }
