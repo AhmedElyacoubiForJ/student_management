@@ -51,6 +51,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<img alt="fake students foto" src="/student_management/URLToReachResourcesFolger/images/student-management.jpg">
 	</div>
 </body>
 </html>
