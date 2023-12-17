@@ -4,12 +4,13 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Student management</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>Student management application</title>
+		<link rel="stylesheet" type="text/css" href="/student_management/URLToReachResourcesFolger/css/app-style-sheet.css">
+	</head>
 <body>
-	<h1 align="center">List of students</h1>
+	<h1 align="center">Student management</h1>
 	<div align="center">
 		<!--  -->
 		<form action="studentCreateForm">
