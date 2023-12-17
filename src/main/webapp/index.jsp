@@ -4,5 +4,5 @@
 <html>
 <body>
 </body>
-	<c:redirect url="/showStudentList"></c:redirect>
+	<c:redirect url="/students"></c:redirect>
 </html>

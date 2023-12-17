@@ -12,7 +12,7 @@
 	<h1 align="center">List of students</h1>
 	<div align="center">
 		<!--  -->
-		<form action="createStudentForm">
+		<form action="studentCreateForm">
 			<input type="submit" value="ADD">
 		</form>
 		<!--  -->
@@ -23,7 +23,7 @@
 					<td>Name</td>
 					<td>Mobile</td>
 					<td>Country</td>
-					<th>Actions</th>
+					<th colspan="2">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,12 +33,19 @@
 						<td>${student.name}</td>
 						<td>${student.mobile}</td>
 						<td>${student.country}</td>
-						<td> 
-							<div class="display: inline-block">
-								<a href="/student_management/updateStudentForm?id=${student.id}" style="color: blue">Update</a>
+						<td>
+							<a href="/student_management/studentUpdateForm?id=${student.id}"
+							   style="color: blue">Update</a>
+						</td>
+						<td>
+							<a href="/student_management/deleteStudent?id=${student.id}"
+							   onclick="if ( !(confirm('Are you sure you want to delete this student?')) ) return false"
+							   style="color: red">Delete</a>
+						</td>
+							<!-- div class="display: inline-block">
+								<a href="/student_management/studentUpdateForm?id=${student.id}" style="color: blue">Update</a>
 								<a href="/student_management/deleteStudent?id=${student.id}" style="color: red">Delete</a>
-							</div>
-        				</td>
+							</div -->
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -18,14 +18,14 @@ public class StudentController {
 	@Autowired
 	private StudentService service;
    
-	@GetMapping("/showStudentList")
+	@GetMapping("/students")
     public String showStudentsList(Model model) {
 		List<Student> studentList = service.getAllStudents();
 		model.addAttribute("students", studentList);
         return "student-list";
     }
 	
-	@GetMapping("/createStudentForm")
+	@GetMapping("/studentCreateForm")
     public String showCreateStudentForm(Model model) {
 		model.addAttribute("student", new Student());
 		model.addAttribute("create", true);
@@ -37,10 +37,10 @@ public class StudentController {
 	@PostMapping("/saveStudent")
     public String saveStudent(Student student) {
 		service.saveStudent(student);
-        return "redirect:/showStudentList";
+        return "redirect:/students";
     }
 	
-	@GetMapping("/updateStudentForm")
+	@GetMapping("/studentUpdateForm")
     public String showUpdateStudentForm(@RequestParam("id") int id, Model model) {
 		Student student = service.getStudentById(id);
 		model.addAttribute("student", student);
@@ -50,14 +50,14 @@ public class StudentController {
 	
 	@GetMapping("deleteStudent")
 	public String deleteStudent(@RequestParam("id") int id) {
-		service.deleteStudentById(id);
-		return "redirect:/showStudentList";
+		service.deleteStudent(id);
+		return "redirect:/students";
 	}
 	
 	@PostMapping("/updateStudent")
     public String updateStudent(Student student) {
 		service.updateStudent(student);
-        return "redirect:/showStudentList";
+        return "redirect:/students";
     }
 	
 	@ResponseBody
