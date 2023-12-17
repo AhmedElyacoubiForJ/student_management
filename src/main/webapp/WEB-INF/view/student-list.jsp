@@ -12,7 +12,7 @@
 	<h1 align="center">List of students</h1>
 	<div align="center">
 		<!--  -->
-		<form action="showStudentForm">
+		<form action="createStudentForm">
 			<input type="submit" value="ADD">
 		</form>
 		<!--  -->
@@ -35,7 +35,7 @@
 						<td>${student.country}</td>
 						<td> 
 							<div class="display: inline-block">
-								<a href="/student_management/showUpdateForm?id=${student.id}" style="color: blue">Update</a>
+								<a href="/student_management/updateStudentForm?id=${student.id}" style="color: blue">Update</a>
 								<a href="/student_management/deleteStudent?id=${student.id}" style="color: red">Delete</a>
 							</div>
         				</td>
