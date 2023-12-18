@@ -7,28 +7,43 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<!--
 		<link rel="stylesheet" type="text/css"
 			  href="/student_management/URLToReachResourcesFolger/css/add-student.css">
 		<link rel="stylesheet" type="text/css"
 			  href="/student_management/URLToReachResourcesFolger/css/app-style-sheet.css">
+		-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	</head>
 <body>
-	<div align="center">
-		<h1 align="center">${(create == true) ? "Add student" : "Update student"}</h1>
+	<div class="container">
+		<h1 align="center" class="display-3">${(create == true) ? "Add student" : "Update student"}</h1>
+		
+		
 		<form:form  action="${action}" modelAttribute="student" method="post">
 			<form:hidden path="id"/>
 			
-			<form:label path="name">Name : </form:label >
-			<form:input path="name"></form:input>
-			<br />	
-			<form:label path="mobile">Mobile : </form:label>
-			<form:input path="mobile"></form:input>
-			<br />
-			<form:label path="country">Country : </form:label>
-			<form:input path="country"></form:input>
-			<br />
-			
-	        <form:button class="myBotton">Submit</form:button>  
+			<div class="form-group row">
+				<form:label path="name" class="col-sm-2 col-form-label">Name:</form:label>
+				<div class="col-sm-5">
+					<form:input path="name" class="form-control"></form:input>
+				</div>
+			</div>
+			<div class="form-group row">
+				<form:label path="mobile" class="col-sm-2 col-form-label">Mobile:</form:label>
+				<div class="col-sm-5">
+					<form:input path="mobile" class="form-control"></form:input>
+				</div>
+			</div>
+			<div class="form-group row">
+				<form:label path="country" class="col-sm-2 col-form-label">Country:</form:label>
+				<div class="col-sm-5">
+					<form:input path="country" class="form-control"></form:input>
+				</div>
+			</div>
+			<div align="center">
+	        	<form:button class="btn btn-primary mb-2">Submit</form:button>
+	        </div> 
 		</form:form>
 	</div>
 </body>

@@ -7,18 +7,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Student management application</title>
-		<link rel="stylesheet" type="text/css"
+		<!--  <link rel="stylesheet" type="text/css"
 			  href="/student_management/URLToReachResourcesFolger/css/app-style-sheet.css">
+		-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	</head>
-<body class="myFonts">
-	<h1 align="center">Student management</h1>
-	<div align="center">
+<body>
+	<h1 align="center" class="display-3">Student management</h1>
+	
+	<div align="center" class="container">
 		<!--  -->
-		<form action="studentCreateForm">
-			<input type="submit" value="ADD" class="myBotton">
-		</form>
+		<div class="mb-3" align="left">
+			<form action="studentCreateForm">
+				<input type="submit" value="ADD" class="btn btn-primary">
+			</form>
+		</div>
 		<!--  -->
-		<table border="1">
+		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>
 					<td>ID</td>
@@ -36,20 +41,26 @@
 						<td>${student.mobile}</td>
 						<td>${student.country}</td>
 						<td>
-							<a href="/student_management/studentUpdateForm?id=${student.id}"
-							   style="color: blue">Update</a>
+							<div align="center">
+								<a href="/student_management/studentUpdateForm?id=${student.id}"
+								   class="btn btn-primary" >Update</a>
+							</div>
 						</td>
 						<td>
-							<a href="/student_management/deleteStudent?id=${student.id}"
-							   onclick="if ( !(confirm('Are you sure you want to delete this student?')) ) return false"
-							   class="myDeleteBotton">Delete</a>
+							<div align="center">
+								<a href="/student_management/deleteStudent?id=${student.id}"
+								   onclick="if ( !(confirm('Are you sure you want to delete this student?')) ) return false"
+								   class="btn btn-danger">Delete</a>
+							 </div>  
 						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		<img alt="fake students foto"
-			 src="/student_management/URLToReachImagesFolger/student-management.jpg">
+			 src="/student_management/URLToReachImagesFolger/student_management.jpg"
+			 class="rounded"
+			 width="100%">
 	</div>
 </body>
 </html>

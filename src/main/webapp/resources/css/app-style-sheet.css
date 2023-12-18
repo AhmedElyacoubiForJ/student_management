@@ -3,7 +3,7 @@
 h1 {
 	color: red;
 }
-
+/*
 .myFonts {
 	font-size: 20px;
 	font-family: Monaco;
@@ -23,6 +23,11 @@ h1 {
 	background-color: yellow;
 }
 
+.myTable {
+	width: 60%;
+	font-family: sans-serif;
+}
+*/
 .myDeleteBotton {
 	color: red;
 }
