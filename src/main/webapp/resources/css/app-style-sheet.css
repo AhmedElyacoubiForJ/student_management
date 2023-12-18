@@ -3,3 +3,26 @@
 h1 {
 	color: red;
 }
+
+.myFonts {
+	font-size: 20px;
+	font-family: Monaco;
+}
+
+.myBotton {
+	color: white;
+	background-color: green;
+	border: 2px solid black;
+	font-size: 24px;
+	padding: 10px 10px 10px 10px;
+	transition-duration: 0.5s;
+}
+
+.myBotton:hover {
+	color: black;
+	background-color: yellow;
+}
+
+.myDeleteBotton {
+	color: red;
+}

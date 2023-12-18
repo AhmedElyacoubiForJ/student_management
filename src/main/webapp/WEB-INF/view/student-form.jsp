@@ -4,13 +4,17 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css"
+			  href="/student_management/URLToReachResourcesFolger/css/add-student.css">
+		<link rel="stylesheet" type="text/css"
+			  href="/student_management/URLToReachResourcesFolger/css/app-style-sheet.css">
+	</head>
 <body>
 	<div align="center">
-		<h3 align="center">${(create == true) ? "Add student" : "Update student"}</h3>
+		<h1 align="center">${(create == true) ? "Add student" : "Update student"}</h1>
 		<form:form  action="${action}" modelAttribute="student" method="post">
 			<form:hidden path="id"/>
 			
@@ -24,7 +28,7 @@
 			<form:input path="country"></form:input>
 			<br />
 			
-	        <form:button>Submit</form:button>  
+	        <form:button class="myBotton">Submit</form:button>  
 		</form:form>
 	</div>
 </body>

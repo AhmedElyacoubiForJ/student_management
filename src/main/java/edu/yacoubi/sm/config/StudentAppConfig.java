@@ -65,5 +65,8 @@ public class StudentAppConfig implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/URLToReachResourcesFolger/**") // mapping for /resources
 		.addResourceLocations("/resources/");
+		
+		registry.addResourceHandler("/URLToReachImagesFolger/**")
+		.addResourceLocations("/resources/images/");
 	}
 }
